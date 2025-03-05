@@ -1,0 +1,61 @@
+# Checkpointing and system settings
+checkpoint_interval: 1
+cuda: true
+keep_n_checkpoints: 3
+seed: 1241232
+
+# Paths
+datapath:  <path_to_data_directory>      # Provide a path to the directory containing Trajectory objects and corresponding velocities
+modelpath: <path_to_save_dtegnn_models>  # Provide a path to save model checkpoints as well as best performing models. If checkpoints subdirectory exists within this directory, latest model checkpoint will be loaded
+
+potim: 0.5 # Integration time used in the AIMD simulations. Will accept a dictionary in the future 
+
+# Atom types mapping [Should be ordered by an atomic number!]
+atom_types_map:
+  0: H
+  1: C
+  2: Pd
+
+# Training parameters
+n_epochs: 20           # Maximum number of epochs
+cutoff: 5.0            # Cut-off radius used to create input graphs
+first_term: 50         # Factor with which to scale prediction error of an initial structure
+N_traj: 5              # Number of trajectories
+N_train: 7             # Maximum number of steps for the current run
+N_train_max: 20        # Upper limit of the subsequence length
+N_val: 120             # Subsequence length for validation points
+neigh_factor: 1        # Frequency (in simulation steps) of AIMD simulation neighborhood structure usage
+check_val: 1           # Frequency (in epochs) of validation error calculation
+Num_train: 256         # Number of training points
+Num_val: 256           # Number of validation points
+
+
+# Evaluation parameters
+N_eval: 300            # Subsequence length for inference points
+dyn_potim: 0.5         # Integration time used in a molecular dynamics performed by the model
+
+
+# Batch sizes
+batch_size: 32
+batch_size_val: 256
+
+# Learning rate settings
+lr: 1.0e-3             # Starting learning rate for S=1
+lr_decay: 0.33         # Factor multiplying learning rate value if validation error doesn't decrease over patience period
+lr_min: 2.0e-6         # Defines minimum learning
+lr_reset: 1.0e-4       # After convergence for current subsequence length, learning rate resets to "lr_reset" value
+patience: 15           # Patience period (in epochs)
+
+# Model architecture
+depth: 3              # Number of EGNN message passing layers
+emb_dim: 128          # Node embedding dimension
+n_out_features: 1     # Dimension of an output
+norm: layer           # Normalization (layer, batch, none)
+RFF_dim: 512          # Dimension of the vector representing edge feature
+RFF_sigma: 4          # Standard deviation of the Gaussian kernel for RFF
+
+# Wandb settings
+wandb_logging: true                     # Whether or not to log on wandb (Requires having an account)
+wandb_project: wandb_project_name
+wandb_name: wandb_run_name
+wandb_mode: online

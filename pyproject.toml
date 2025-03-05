@@ -1,0 +1,50 @@
+[project]
+
+name = "dtegnn"
+version = "0.1.0"
+requires-python = ">=3.10"
+
+description = "Dynamic Training method applied to equivariant graph neural network"
+readme = "README.md"
+authors = [
+    {name = "Ivan Zugec", email = "zugec.ivan@gmail.com"},
+]
+license = { file = "LICENSE" }  
+
+keywords = ["machine learning potentials", "molecular dynamics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "torch>=2.3.0",
+    "torch-geometric>=2.5.3",
+    "torch-scatter>=2.1.2",
+    "torch-sparse>=0.6.18",
+    "torch-cluster>=1.6.3",
+    "torch-spline-conv>=1.2.2",
+    "numpy>=1.26.4",
+    "scipy>=1.13.0",
+    "networkx>=3.3",
+    "matplotlib>=3.8.4",
+    "pandas>=2.2.2",
+    "scikit-learn>=1.4.2",
+    "wandb>=0.16.6",
+    "tqdm>=4.66.2",
+    "pymatgen>=2024.5.1",
+    "ase>=3.22.1"
+]
+
+[tool.setuptools.packages.find]
+include = ["dtegnn*"]
+
+[project.urls]
+Repository = "https://github.com/IZugec/dtegnn.git"
+
+
+[project.scripts]
+dtegnn = "dtegnn.scripts:train"
+
