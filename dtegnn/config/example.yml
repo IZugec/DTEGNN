@@ -31,6 +31,7 @@ Num_val: 256           # Number of validation points
 
 
 # Evaluation parameters
+N_traj_eval: 20        # Number of trajectories to perform
 N_eval: 300            # Subsequence length for inference points
 dyn_potim: 0.5         # Integration time used in a molecular dynamics performed by the model
 

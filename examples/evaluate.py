@@ -43,7 +43,7 @@ def main(config_path: Path, model_path: Path, output_path: Path):
     
     indices = np.load('example_indices.npy')
     list_of_initial_structures = []
-    for i in range(1,101):
+    for i in range(1,args.N_traj_eval):
         list_of_atoms_test = []
         atoms = read(args.datapath + '/traj_{}.traj'.format(i), index=':')
         vel = prepare_velocities(args.datapath + '/velall-{}'.format(i), args.potim, atoms)
