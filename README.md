@@ -27,7 +27,7 @@ python3.12 <path_to_cloned_dir>/scripts/train.py <path_to_input_file>/config.yml
 ```
 An example of an input configuration file can be found in dtegnn/config/example.yml.
 
-Current implementation reads AIMD simultions with the help of ASE and assumes Trajectory object. Units of atomic velocities are assumed to be in the format given by the VASP output file OUTCAR. 
+Current implementation reads AIMD simultions with the help of ASE and assumes Trajectory object. Velocities are assumed to be in the basis of lattice vectors multiplied by the integration time of the underlying simulation.
 An example of data required for a successful run can be downloaded through the following [link](https://doi.org/10.6084/m9.figshare.28498778.v1)
 
 or directly by running
