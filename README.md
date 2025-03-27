@@ -17,6 +17,7 @@ conda env create --file envs/env-cu121.yml --force
 ```
 This command builds an environment with CUDA 12.1 version.
 
+
 ## Usage
 
 ### Training
@@ -39,6 +40,8 @@ followed by renaming the downloaded file, and unzipping it.
 mv 52738940 dataset.zip
 unzip -d dataset.zip <path_to_desired_directory>
 ```
+
+Note: While the DT-EGNN training times reported in our paper were obtained using 4 GPUs, the current implementation supports single-GPU training only. Multi-GPU support will be added shortly.
 
 ### Evaluation
 
