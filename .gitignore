@@ -25,12 +25,12 @@ dtegnn/training/*.ipynb_checkpoints
 
 dtegnn/utils/*.ipynb_checkpoints
 
-dtegnn/__pycache__
-dtegnn/utils/__pycache__
-dtegnn/training/__pycache__
-dtegnn/model/__pycache_
-dtegnn/model/layers/__pycache__
-dtegnn/model/nn/__pycache___
-dtegnn/data/__pycache__
+dtegnn/*__pycache__
+dtegnn/utils/*__pycache__
+dtegnn/training/*__pycache__
+dtegnn/model/*__pycache_
+dtegnn/model/layers/*__pycache__
+dtegnn/model/nn/*__pycache___
+dtegnn/data/*__pycache__
 
 
